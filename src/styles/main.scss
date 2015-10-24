@@ -1,0 +1,114 @@
+@import '../../bower_components/normalize-scss/normalize';
+@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../../bower_components/neat/app/assets/stylesheets/neat";
+
+@import "settings";
+@import "sections";
+@import "typography";
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.nuotrauka {
+  @include span-columns(7);
+  margin: 0;
+  background-image: url(../images/xxxlarge/zima.jpg);
+  background-position: 15% 17%;
+
+  .hhh {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 0;
+    margin-left: 7vw;
+    padding-top: 5vh;
+  }
+  .kiek {
+    color: white;
+    margin-left: 7vw;
+  }
+  span {
+    font-weight: bolder;
+    font-size: 1.3em;
+    color: #bf5f5f;
+  }
+}
+
+.bendras {
+  @include outer-container(100%);
+}
+
+.nuotrauka, .bendras, section {
+  height: 100vh;
+}
+
+section {
+  @include span-columns(5);
+  @include outer-container;
+
+
+  .kv {
+
+    @include span-columns(11.3);
+    @include shift(0.7);
+
+    height: 43vh;
+
+    margin-bottom: 4vh;
+    
+    background-color: rgba(191, 95, 95, 0.6);
+
+    div.parent:hover {
+        background-color: #bf5f5f;
+    }
+
+    .parent {
+      height: 100%;
+      position: relative;
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        .ak {
+          font-size: 3em;
+          padding-top: 5vh;
+        }
+
+        .dat {
+          font-weight: bolder;
+        }
+        p {
+          color: black;
+          margin: 0;
+          font-size: 1.5em;
+          @include media(max-width $plansetas) {
+            font-size: 1em;
+          }
+          @include media(max-width $mobas) {
+            font-size: 1.3em;
+          }
+          @include media(min-width $mobas max-height $mobas) {
+            font-size: 0.7em;
+          }
+          @include media(max-height $lievas-mobas) {
+            font-size: 0.7em;
+          }
+        }
+      }
+    }
+  }
+
+  .kv1 {
+    margin-top: 5vh;
+    background-image: url(../images/large/144.jpg);
+    background-position: center;
+  }
+
+  .kv2 {
+    background-image: url(../images/large/0822.jpg);
+  }
+}
