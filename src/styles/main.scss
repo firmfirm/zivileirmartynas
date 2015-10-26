@@ -1,114 +1,104 @@
 @import '../../bower_components/normalize-scss/normalize';
-@import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
-@import "../../bower_components/neat/app/assets/stylesheets/neat";
 
 @import "settings";
-@import "sections";
-@import "typography";
 
-body {
-  width: 100vw;
+body, .container {
+  width: 100%;
   height: 100vh;
 }
 
-.nuotrauka {
-  @include span-columns(7);
-  margin: 0;
-  background-image: url(../images/xxxlarge/zima.jpg);
-  background-position: 15% 17%;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 
-  .hhh {
-    font-size: 1.5em;
-    color: white;
-    margin-bottom: 0;
-    margin-left: 7vw;
-    padding-top: 5vh;
+  .footer, .nav {
+      font-family: $font-burbon;
+      font-size: 2em;
   }
-  .kiek {
-    color: white;
-    margin-left: 7vw;
+
+  .line {
+    background: $color;
+    height: 2vh;
   }
-  span {
-    font-weight: bolder;
-    font-size: 1.3em;
-    color: #bf5f5f;
-  }
-}
 
-.bendras {
-  @include outer-container(100%);
-}
-
-.nuotrauka, .bendras, section {
-  height: 100vh;
-}
-
-section {
-  @include span-columns(5);
-  @include outer-container;
-
-
-  .kv {
-
-    @include span-columns(11.3);
-    @include shift(0.7);
-
-    height: 43vh;
-
-    margin-bottom: 4vh;
-    
-    background-color: rgba(191, 95, 95, 0.6);
-
-    div.parent:hover {
-        background-color: #bf5f5f;
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+      font-family: $font-namez;
+      color: $color;
+      font-weight: lighter;
+      margin: 1vh 0;
+      font-size: 5em;
     }
-
-    .parent {
-      height: 100%;
-      position: relative;
-      .content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .nav {
+      a, a:hover, a:active, a:visited {
         text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        color: $color;
+      }
+    }
+    .y-vestuves {
+      margin-right: 2vw;
+    }
+  }
 
-        .ak {
-          font-size: 3em;
-          padding-top: 5vh;
-        }
+  .hero {
+    flex: 1;
+    background: url(../images/xxxlarge/hero.jpg) center center;
+  }
 
-        .dat {
-          font-weight: bolder;
-        }
-        p {
-          color: black;
+  .footer {
+    padding: 3vh 0;
+    color: $color;
+    text-align: center;
+  }
+
+  @media screen and (max-width: $mobas) {
+    .header {
+      flex-direction: column;
+      h1 { font-size: 2.5em; }
+    }
+  }
+
+  @media screen and (max-width: $hp) {
+    .header { h1 { font-size: 4em; } }
+    .nav { font-size: 1.5em; }
+    .footer {
+      font-size: 1.5em;
+    }
+  }
+
+  @media screen and (min-width: $plansetas) {
+    .hero, .header {
+      $marginiux: 15vw;
+      margin-left: $marginiux;
+      margin-right: $marginiux;
+    }
+  }
+
+  @media screen and (max-width: $mobas) {
+    .header {
+      flex-direction: column;
+      h1 { font-size: 2.5em; }
+      .nav {
+        font-size: 1.2em;
+        text-align: center;
+        a {
           margin: 0;
-          font-size: 1.5em;
-          @include media(max-width $plansetas) {
-            font-size: 1em;
-          }
-          @include media(max-width $mobas) {
-            font-size: 1.3em;
-          }
-          @include media(min-width $mobas max-height $mobas) {
-            font-size: 0.7em;
-          }
-          @include media(max-height $lievas-mobas) {
-            font-size: 0.7em;
-          }
+        }
+        .y-vestuves {
+          margin-right: 8vw;;
         }
       }
     }
-  }
-
-  .kv1 {
-    margin-top: 5vh;
-    background-image: url(../images/large/144.jpg);
-    background-position: center;
-  }
-
-  .kv2 {
-    background-image: url(../images/large/0822.jpg);
+    .footer {
+      padding: 2vh 0;
+      font-size: 1em;
+    }
   }
 }

@@ -1,5 +1,11 @@
-$logo-color-1: #303030;
-$logo-color-2: #666666;
+@import url(https://fonts.googleapis.com/css?family=Sacramento);
+@import url(https://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext);
+
+$font-namez: 'Sacramento', cursive;
+$font-burbon: 'Century Gothic', CenturyGothic, 'Didact Gothic', AppleGothic, sans-serif;
+
+$color: #7d2d2d;
 $lievas-mobas: 450px;
 $mobas: 640px;
-$plansetas: 1080px;
+$plansetas: 1150px;
+$hp: 1500px;
