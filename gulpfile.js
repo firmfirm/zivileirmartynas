@@ -75,6 +75,7 @@ gulp.task('images', function(cb) {
 gulp.task('styles', function() {
   return gulp.src(['src/styles/main.scss', 'src/styles/galerija.scss'])
              .pipe($.sass().on('error', $.sass.logError))
+             .pipe($.autoprefixer())
              .pipe(gulp.dest('.dist/styles'));
 });
 
@@ -97,45 +98,14 @@ gulp.task('html', function() {
              .pipe(gulp.dest('.dist'));
 });
 
-gulp.task('dist:html', function() {
-  return gulp.src('src/**/*.html')
-             .pipe($.smoosher({ base: '.dist' }))
-             .pipe($.htmlmin({
-               removeComments: true,
-               removeCommentsFromCDATA: true,
-               removeCDATASectionsFromCDATA: true,
-               collapseWhitespace: true,
-               collapseBooleanAttributes: true,
-               removeAttributeQuotes: true,
-               removeRedundantAttributes: true,
-               preventAttributesEscaping: true,
-               useShortDoctype: true,
-               removeEmptyAttributes: true,
-               removeScriptTypeAttributes: true,
-               removeStyleLinkTypeAttributes: true,
-               removeOptionalTags: true,
-               removeIgnored: true,
-               minifyJS: true,
-               minifyCSS: true,
-               minifyURLs: true,
-               processScripts: true
-             }))
+gulp.task('cname', function() {
+  return gulp.src('src/CNAME')
              .pipe(gulp.dest('.dist'));
-});
+})
 
-gulp.task('deploy', ['dist:build'], function() {
+gulp.task('deploy', ['build', 'cname'], function() {
   return gulp.src('.dist/**/*')
              .pipe($.ghPages());
-});
-
-gulp.task('dist:assets:clean', function() {
-  return gulp.src(['.dist/scripts', '.dist/styles'], { read: false })
-             .pipe($.clean());
-});
-
-gulp.task('dist:copy', function() {
-  return gulp.src(['src/CNAME', 'src/robots.txt'])
-             .pipe(gulp.dest('.dist'));
 });
 
 gulp.task('build', function(cb) {
@@ -146,13 +116,3 @@ gulp.task('build', function(cb) {
     cb
   );
 });
-
-gulp.task('dist:build', function(cb) {
-  return runSequence(
-    'clean',
-    ['dist:images', 'styles', 'scripts', 'vendor', 'dist:copy'],
-    'dist:html',
-    'dist:assets:clean',
-    cb
-  );
-})
