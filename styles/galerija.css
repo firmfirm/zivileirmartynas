@@ -15,7 +15,7 @@
  * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
  *  `em` units.
  */
-@import url(https://fonts.googleapis.com/css?family=Sacramento);
+@import url(https://fonts.googleapis.com/css?family=Sacramento&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext);
 html {
   font-family: sans-serif;
