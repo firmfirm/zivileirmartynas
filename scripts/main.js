@@ -18,11 +18,11 @@ var skaiciuok = function() {
   var minutes = diff.minutes();
   var seconds = diff.seconds();
   $('.footer').html(
-    "Susituokę " + "<strong>" + months + "</strong>" + (kiek(months) == 'one' ? ' mėnesį, ' : (kiek(months) == 'few' ? ' mėnesius, ' : ' mėnesių, ')) +
-    "<strong>" + days + "</strong>" + (kiek(days) == 'one' ? ' dieną, ' : (kiek(days) == 'few' ? ' dienas, ' : ' dienų, ')) +
-    "<strong>" + hours + "</strong>" + (kiek(hours) == 'one' ? ' valandą, ' : (kiek(hours) == 'few' ? ' valandas, ' : ' valandų, ')) +
-    "<strong>" + minutes + "</strong>" + (kiek(minutes) == 'one' ? ' minutę, ' : (kiek(minutes) == 'few' ? ' minutes, ' : ' minučių, ')) +
-    "<strong>" + seconds + "</strong>" + (kiek(seconds) == 'one' ? ' sekundę' : (kiek(seconds) == 'few' ? ' sekundes' : ' sekundžių'))
+    "Susituokę " + months + (kiek(months) == 'one' ? ' mėnesį, ' : (kiek(months) == 'few' ? ' mėnesius, ' : ' mėnesių, ')) +
+    + days + (kiek(days) == 'one' ? ' dieną, ' : (kiek(days) == 'few' ? ' dienas, ' : ' dienų, ')) +
+    + hours + (kiek(hours) == 'one' ? ' valandą, ' : (kiek(hours) == 'few' ? ' valandas, ' : ' valandų, ')) +
+     + minutes + (kiek(minutes) == 'one' ? ' minutę, ' : (kiek(minutes) == 'few' ? ' minutes, ' : ' minučių, ')) +
+     + seconds + (kiek(seconds) == 'one' ? ' sekundę' : (kiek(seconds) == 'few' ? ' sekundes' : ' sekundžių'))
   );
 };
 

@@ -377,18 +377,32 @@ html {
   box-sizing: inherit; }
 
 html, body {
-  background-image: url(../images/medium/chi.png);
+  background: white;
   background-repeat: repeat; }
 
 p {
+  font-family: "Century Gothic", CenturyGothic, "Didact Gothic", AppleGothic, sans-serif;
   text-align: center;
-  color: white;
+  color: #1A0000;
   padding: 2vh;
-  font-size: 1.2em;
-  font-weight: bolder; }
+  font-size: 1.2em; }
 
-.main > header {
+p:hover {
+  color: #CC9999; }
+
+.main header {
   padding-bottom: 5vh; }
+  .main header h1 {
+    font-family: "Sacramento", cursive;
+    color: #1A0000;
+    font-weight: lighter;
+    font-size: 3em; }
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding-top: 1vh; }
+    .main header {
+      padding-bottom: 0; } }
 
 .navigacija {
   max-width: 68em;
@@ -403,27 +417,25 @@ p {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 14.70196%;
+    width: 23.23176%;
     text-align: center; }
     .navigacija .mygt:last-child, .navigacija .ves:last-child {
       margin-right: 0; }
-  .navigacija .mygt {
-    background-color: #bf5f5f;
-    box-shadow: 1px 1px 2px black; }
   .navigacija #desiniau {
-    margin-left: 25.58941%; }
+    margin-left: 8.5298%; }
   .navigacija .ves {
-    margin-left: 25.58941%; }
+    margin-left: 17.05961%; }
   @media screen and (max-width: 640px) {
     .navigacija .mygt {
       float: left;
       display: block;
       margin-right: 4.82916%;
-      width: 100%; }
+      width: 47.58542%; }
       .navigacija .mygt:last-child {
         margin-right: 0; }
+      .navigacija .mygt a {
+        font-size: 0.75em; }
     .navigacija #desiniau {
-      margin-left: 0%;
-      margin-top: 5vh; }
+      margin-left: 0%; }
     .navigacija .ves {
       display: none; } }
