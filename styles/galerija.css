@@ -388,10 +388,10 @@ p {
   font-size: 1.2em; }
 
 p:hover {
-  color: #CC9999; }
+  color: #AD655F; }
 
 .main header {
-  padding-bottom: 5vh; }
+  padding-bottom: 0; }
   .main header h1 {
     font-family: "Sacramento", cursive;
     color: #1A0000;
