@@ -15,7 +15,7 @@
  * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
  *  `em` units.
  */
-@import url(https://fonts.googleapis.com/css?family=Sacramento&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Sacramento);
 @import url(https://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,latin-ext);
 html {
   font-family: sans-serif;
@@ -372,89 +372,78 @@ th {
 
 body, .container {
   width: 100%;
-  height: 100vh;
-  background: white; }
+  height: 100vh; }
 
 .container {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch; }
   .container .footer, .container .nav {
     font-family: "Century Gothic", CenturyGothic, "Didact Gothic", AppleGothic, sans-serif; }
+  .container .line {
+    background: #7d2d2d;
+    height: 2vh; }
   .container .header {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
     -webkit-box-align: center;
-    -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
     .container .header h1 {
       font-family: "Sacramento", cursive;
-      color: #1A0000;
+      color: #7d2d2d;
       font-weight: lighter;
       margin: 1vh 0;
-      font-size: 4em; }
+      font-size: 5em; }
     .container .header .nav {
-      font-size: 1.7em; }
-      .container .header .nav a, .container .header .nav a:active, .container .header .nav a:visited {
+      font-size: 2em; }
+      .container .header .nav a, .container .header .nav a:hover, .container .header .nav a:active, .container .header .nav a:visited {
         text-align: center;
         display: inline-block;
         text-decoration: none;
-        color: #1A0000; }
-      .container .header .nav a:hover {
-        color: #AD655F; }
+        color: #7d2d2d; }
     .container .header .y-vestuves {
-      margin-right: 5vw; }
+      margin-right: 2vw; }
   .container .hero {
     -webkit-box-flex: 1;
-    -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    background: url(../images/xxxlarge/53.jpg) center center;
-    background-size: cover;
-    border: 1px solid #1A0000; }
+    background: url(../images/xxxlarge/hero.jpg) center center; }
   .container .footer {
     font-size: 1.7em;
     padding: 3vh 0;
-    color: #1A0000;
+    color: #7d2d2d;
     text-align: center; }
   @media screen and (max-width: 640px) {
     .container .header {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column; }
       .container .header h1 {
         font-size: 2.5em; } }
   @media screen and (max-width: 1500px) {
     .container .header h1 {
-      font-size: 3em; }
+      font-size: 4em; }
     .container .header .nav {
-      font-size: 1em; }
+      font-size: 1.4em; }
     .container .footer {
-      font-size: 1em; } }
+      font-size: 1.1em; } }
   @media screen and (min-width: 1150px) {
     .container .hero, .container .header {
       margin-left: 15vw;
@@ -463,15 +452,12 @@ body, .container {
     .container .header {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column; }
       .container .header h1 {
         font-size: 2.5em; }
       .container .header .nav {
-        font-size: 0.75em;
-        text-align: center;
-        margin-bottom: 2vh; }
+        text-align: center; }
         .container .header .nav a {
           margin: 0; }
         .container .header .nav .y-vestuves {

@@ -12,17 +12,20 @@ var skaiciuok = function() {
   var dabar = moment(new Date());
   var diff = moment.duration(dabar.diff(tada));
   var locale = moment.localeData('lt');
+  var years = diff.years();
   var months = diff.months();
   var days = diff.days();
   var hours = diff.hours();
   var minutes = diff.minutes();
   var seconds = diff.seconds();
   $('.footer').html(
-    "Susituokę " + months + (kiek(months) == 'one' ? ' mėnesį, ' : (kiek(months) == 'few' ? ' mėnesius, ' : ' mėnesių, ')) +
-    + days + (kiek(days) == 'one' ? ' dieną, ' : (kiek(days) == 'few' ? ' dienas, ' : ' dienų, ')) +
-    + hours + (kiek(hours) == 'one' ? ' valandą, ' : (kiek(hours) == 'few' ? ' valandas, ' : ' valandų, ')) +
-     + minutes + (kiek(minutes) == 'one' ? ' minutę, ' : (kiek(minutes) == 'few' ? ' minutes, ' : ' minučių, ')) +
-     + seconds + (kiek(seconds) == 'one' ? ' sekundę' : (kiek(seconds) == 'few' ? ' sekundes' : ' sekundžių'))
+    "Susituokę " +
+    "<strong>" + years + "</strong>" + (kiek(years) == 'one' ? ' metus, ' : (kiek(months) == 'few' ? ' metus, ' : ' metų, ')) +
+    "<strong>" + months + "</strong>" + (kiek(months) == 'one' ? ' mėnesį, ' : (kiek(months) == 'few' ? ' mėnesius, ' : ' mėnesių, ')) +
+    "<strong>" + days + "</strong>" + (kiek(days) == 'one' ? ' dieną, ' : (kiek(days) == 'few' ? ' dienas, ' : ' dienų, ')) +
+    "<strong>" + hours + "</strong>" + (kiek(hours) == 'one' ? ' valandą, ' : (kiek(hours) == 'few' ? ' valandas, ' : ' valandų, ')) +
+    "<strong>" + minutes + "</strong>" + (kiek(minutes) == 'one' ? ' minutę, ' : (kiek(minutes) == 'few' ? ' minutes, ' : ' minučių, ')) +
+    "<strong>" + seconds + "</strong>" + (kiek(seconds) == 'one' ? ' sekundę' : (kiek(seconds) == 'few' ? ' sekundes' : ' sekundžių'))
   );
 };
 
